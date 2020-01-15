@@ -1,0 +1,34 @@
+from tweepy.streaming import StreamListener
+from tweepy import OAuthHandler
+from tweepy import Stream
+
+import twittercredentials
+
+class TwitterStreamer():
+
+	def stream_tweets(self, fetched_tweet_filename, hash_tag_list):
+		
+
+class StdOutListener(StreamListener):
+
+	def on_data(self,data):
+		print(data)
+		return True
+	
+	def on_error(self, status):
+		print(status)
+
+if __name__=="__main__":
+	listener = StdOutListener()
+	auth = OAuthHandler(twittercredentials.CONSUMER_KEY, twittercredentials.CONSUMER_SECRET)
+	auth.set_access_token(twittercredentials.ACCESS_TOKEN, twittercredentials.ACCESS_TOKEN_SECRET)
+
+	stream = Stream(auth, listener)
+
+	stream.filter(track = ['donald trump','hillary clinton', 'barack obama', 'bernie sanders'])
+
+listener = StdOutListener()
+        auth = OAuthHandler(twittercredentials.CONSUMER_KEY, twittercredentials.CONS$        auth.set_access_token(twittercredentials.ACCESS_TOKEN, twittercredentials.AC$
+        stream = Stream(auth, listener)
+
+        stream.filter(track = ['donald trump','hillary clinton', 'barack obama', 'be$
